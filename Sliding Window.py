@@ -28,6 +28,6 @@ def max_sum(arr,k):
         highest_sum = max(highest_sum,current_sum)
     return  highest_sum
 
-arr = [100,200,300,400]
+arr = [1000,200,300,400]
 k = 3
 print(max_sum(arr, k))
