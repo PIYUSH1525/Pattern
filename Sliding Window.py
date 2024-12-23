@@ -17,17 +17,17 @@
 def max_sum(arr,k):
     n = len (arr)
     current_sum = 0
-    if k>n:
+    if n<k:
         return "Invalid"
-    for i in range(0,k):
+    for i in range(k):
         current_sum += arr[i]
     highest_sum = current_sum
 
+    for i in range(k,n):
+        current_sum += arr[i] - arr[i-k]
+        highest_sum = max(highest_sum,current_sum)
+    return  highest_sum
 
-
-
-
-
-arr = [4, 2, 1, 7, 3, 8, 9, 0, 6]
+arr = [100,200,300,400]
 k = 3
 print(max_sum(arr, k))
